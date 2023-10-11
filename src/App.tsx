@@ -3,7 +3,9 @@ import React from "react";
 function App() {
   return (
     <div className="App">
-      <div>{"hello world"}</div>
+      <header className="App-header">
+        <p>Hello world</p>
+      </header>
     </div>
   );
 }
