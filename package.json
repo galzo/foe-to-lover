@@ -1,0 +1,28 @@
+{
+  "name": "foe-to-lover",
+  "version": "1.0.0",
+  "description": "Convert the foes of israel into our greatest lovers <3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galzo/foe-to-lover.git"
+  },
+  "keywords": [
+    "foe",
+    "lover",
+    "israel",
+    "hammas",
+    "stand",
+    "with",
+    "israel"
+  ],
+  "author": "galzo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/galzo/foe-to-lover/issues"
+  },
+  "homepage": "https://github.com/galzo/foe-to-lover#readme"
+}
