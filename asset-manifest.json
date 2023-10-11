@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/foe-to-lover/static/css/main.e6c13ad2.css",
-    "main.js": "/foe-to-lover/static/js/main.c430b3a3.js",
+    "main.js": "/foe-to-lover/static/js/main.773fa5df.js",
     "static/js/787.8dc6b7f0.chunk.js": "/foe-to-lover/static/js/787.8dc6b7f0.chunk.js",
     "index.html": "/foe-to-lover/index.html",
     "main.e6c13ad2.css.map": "/foe-to-lover/static/css/main.e6c13ad2.css.map",
-    "main.c430b3a3.js.map": "/foe-to-lover/static/js/main.c430b3a3.js.map",
+    "main.773fa5df.js.map": "/foe-to-lover/static/js/main.773fa5df.js.map",
     "787.8dc6b7f0.chunk.js.map": "/foe-to-lover/static/js/787.8dc6b7f0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.c430b3a3.js"
+    "static/js/main.773fa5df.js"
   ]
 }
