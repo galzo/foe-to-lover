@@ -10,6 +10,7 @@ export const RootContainer: FC<{ children: ReactNode }> = ({ children }) => {
         height: "100vh",
         backgroundColor: AppColors.background,
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
       }}

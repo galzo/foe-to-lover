@@ -12,35 +12,32 @@ import { ImageEmoji } from "../ImageEmoji/ImageEmoji";
 import { ImageAsset } from "../ImageAsset/ImageAsset";
 
 export const ImageViewer = () => {
-  const { selectedImageUrl } = useContext(ImageSelectionContext);
-  const componentRef = useRef<HTMLDivElement>();
-
+  const { selectedImageUrl, imageElementRef } = useContext(ImageSelectionContext);
   if (!selectedImageUrl) return null;
 
   return (
     <>
       <Box
-        ref={componentRef}
+        ref={imageElementRef}
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           borderRadius: "6px",
-          width: "60%",
           height: "60%",
           border: `1px dashed ${alpha(AppColors.border, 0.3)}`,
           position: "relative",
         }}
       >
         <ImageText
-          font="orbitron"
+          font="ultra"
           text="I STAND WITH ISRAEL"
-          size={40}
+          size={35}
           backgroundColor={AppColors.blueDeFrance}
-          parentElement={componentRef.current}
+          parentElement={imageElementRef?.current}
         />
-        <ImageAsset parentElement={componentRef.current} size={120} asset="menKiss" />
-        <ImageEmoji parentElement={componentRef.current} size={50} emoji="inLove3" />
+        <ImageAsset parentElement={imageElementRef?.current} size={120} asset="israflag3" />
+        <ImageEmoji parentElement={imageElementRef?.current} size={50} emoji="inLove1" />
         <Image
           src={selectedImageUrl}
           alt="preview"
@@ -55,7 +52,6 @@ export const ImageViewer = () => {
           }}
         />
       </Box>
-      <Button onClick={() => exportComponentAsJPEG(componentRef as any)}>{"Test"}</Button>
     </>
   );
 };

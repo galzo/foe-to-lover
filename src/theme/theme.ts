@@ -10,7 +10,8 @@ const createBackgroundColor = (color: string) => ({ default: color, paper: color
 
 export const theme = createTheme({
   palette: {
-    primary: createColor(AppColors.primary),
+    primary: createColor(AppColors.text),
+    secondary: createColor(AppColors.blueDeFrance),
     background: createBackgroundColor(AppColors.background),
     divider: AppColors.border,
   },

@@ -4,6 +4,7 @@ import { ImageSelectionContextProvider } from "../context/ImageSelectionContext/
 import { RootContainer } from "../styleComponents/RootContainer";
 import { ImageInput } from "./ImageInput/ImageInput";
 import { ImageViewer } from "./ImageViewer/ImageViewer";
+import { ImageToolbar } from "./ImageToolbar/ImageToolbar";
 
 export const App = () => {
   return (
@@ -12,6 +13,7 @@ export const App = () => {
         <RootContainer>
           <ImageInput />
           <ImageViewer />
+          <ImageToolbar />
         </RootContainer>
       </ImageSelectionContextProvider>
     </ThemeProvider>

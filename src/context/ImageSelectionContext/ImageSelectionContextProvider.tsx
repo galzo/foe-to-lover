@@ -1,9 +1,10 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useRef } from "react";
 import { ImageSelectionContext } from "./ImageSelectionContext";
 import { useImageSelection } from "../../hooks/useImageSelection";
 
 export const ImageSelectionContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const { selectedImage, selectedImageUrl, onSelectImage } = useImageSelection();
+  const imageRef = useRef<HTMLDivElement | undefined>();
 
   return (
     <ImageSelectionContext.Provider
@@ -11,6 +12,7 @@ export const ImageSelectionContextProvider: FC<{ children: ReactNode }> = ({ chi
         selectedImage,
         selectedImageUrl,
         onSelectImage,
+        imageElementRef: imageRef,
       }}
     >
       {children}
