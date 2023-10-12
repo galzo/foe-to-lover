@@ -1,14 +1,11 @@
-import { ChangeEvent, useEffect, useState } from "react";
-import { imageMimeType } from "../consts/imageSelectorConsts";
+import { useEffect, useState } from "react";
+import { imageMimeType } from "../consts/formats";
 
 export const useImageSelection = () => {
   const [selectedImage, setSelectedImage] = useState<File>();
   const [imageURL, setImageURL] = useState<string>();
 
-  const onSelectImage = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e?.target?.files?.[0];
-    if (!file) return;
-
+  const onSelectImage = (file: File) => {
     if (!file.type.match(imageMimeType)) {
       console.warn("Image mime type is not valid");
       return;
@@ -41,6 +38,7 @@ export const useImageSelection = () => {
 
   return {
     onSelectImage: onSelectImage,
-    selectedImage: imageURL,
+    selectedImageUrl: imageURL,
+    selectedImage: selectedImage,
   };
 };

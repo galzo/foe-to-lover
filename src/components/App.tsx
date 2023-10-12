@@ -1,21 +1,17 @@
-import { Box, Typography } from "@mui/material";
-import React from "react";
-import { ImageSelector } from "./ImageSelector/ImageSelector";
-import { useImageSelection } from "../hooks/useImageSelection";
-import { ImageViewer } from "./ImageViewer/ImageViewer";
+import { ThemeProvider } from "@mui/material";
+import { theme } from "../theme/theme";
+import { ImageSelectionContextProvider } from "../context/ImageSelectionContext/ImageSelectionContextProvider";
+import { RootContainer } from "../styleComponents/RootContainer";
+import { ImageInput } from "./ImageInput/ImageInput";
 
 export const App = () => {
-  const { onSelectImage, selectedImage } = useImageSelection();
-
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "100%",
-      }}
-    >
-      <ImageSelector onSelectImage={onSelectImage} />
-      {selectedImage && <ImageViewer imageSource={selectedImage} />}
-    </Box>
+    <ThemeProvider theme={theme}>
+      <ImageSelectionContextProvider>
+        <RootContainer>
+          <ImageInput />
+        </RootContainer>
+      </ImageSelectionContextProvider>
+    </ThemeProvider>
   );
 };
