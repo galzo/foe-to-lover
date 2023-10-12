@@ -4,14 +4,16 @@ import { ImageSelectionContext } from "../../context/ImageSelectionContext/Image
 import { Image } from "../../styleComponents/Image";
 import { AppColors } from "../../consts/colors";
 import { AppShadows } from "../../consts/shadows";
-import { exportComponentAsPNG } from "react-component-export-image";
+import { exportComponentAsJPEG, exportComponentAsPNG } from "react-component-export-image";
 import "@fontsource/bungee-shade";
 import { AppFonts } from "../../consts/fonts";
 import { ImageText } from "../ImageText/ImageText";
+import { ImageEmoji } from "../ImageEmoji/ImageEmoji";
+import { ImageAsset } from "../ImageAsset/ImageAsset";
 
 export const ImageViewer = () => {
   const { selectedImageUrl } = useContext(ImageSelectionContext);
-  const componentRef = useRef();
+  const componentRef = useRef<HTMLDivElement>();
 
   if (!selectedImageUrl) return null;
 
@@ -30,7 +32,15 @@ export const ImageViewer = () => {
           position: "relative",
         }}
       >
-        <ImageText font="ultra" text="testing this shit" />
+        <ImageText
+          font="orbitron"
+          text="I STAND WITH ISRAEL"
+          size={40}
+          backgroundColor={AppColors.blueDeFrance}
+          parentElement={componentRef.current}
+        />
+        <ImageAsset parentElement={componentRef.current} size={120} asset="menKiss" />
+        <ImageEmoji parentElement={componentRef.current} size={50} emoji="inLove3" />
         <Image
           src={selectedImageUrl}
           alt="preview"
@@ -45,7 +55,7 @@ export const ImageViewer = () => {
           }}
         />
       </Box>
-      <Button onClick={() => exportComponentAsPNG(componentRef as any)}>{"Test"}</Button>
+      <Button onClick={() => exportComponentAsJPEG(componentRef as any)}>{"Test"}</Button>
     </>
   );
 };
