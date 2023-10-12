@@ -3,10 +3,11 @@ import React, { ChangeEvent, FC, useCallback, useContext, useRef } from "react";
 import { acceptableFormats } from "../../consts/formats";
 import { AppColors } from "../../consts/colors";
 import { ImageSelectionContext } from "../../context/ImageSelectionContext/ImageSelectionContext";
+import { AppShadows } from "../../consts/shadows";
 
 export const ImageInput = () => {
   const imageInputRef = useRef<HTMLInputElement>(null);
-  const { onSelectImage } = useContext(ImageSelectionContext);
+  const { onSelectImage, selectedImage } = useContext(ImageSelectionContext);
 
   const handleChangeImage = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +19,8 @@ export const ImageInput = () => {
     [onSelectImage]
   );
 
+  if (selectedImage) return null;
+
   return (
     <Box
       sx={{
@@ -25,6 +28,7 @@ export const ImageInput = () => {
         justifyContent: "center",
         alignItems: "center",
         border: `1px dashed ${AppColors.border}`,
+        boxShadow: AppShadows.imageShadow,
         borderRadius: "6px",
         width: "60%",
         height: "60%",
